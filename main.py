@@ -1,4 +1,4 @@
-from plugin impacrossgin
+from plugin import Plugin
 from simsys import Simsys
 from resource import Resource
 from command import Command
