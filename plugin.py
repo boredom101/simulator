@@ -1,5 +1,11 @@
 class Plugin:
 
+    # a group of commands, resources, and properties that all work together.
+
+    # name : used by simsys for commands
+    # resources, commands and properties : dictionaries of said objects
+    # parent : Another plugin that this plugin can access
+
     def __init__(self, name, resources, commands, properties, parent=None):
         self.resources = resources
         self.commands = commands
