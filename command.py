@@ -9,10 +9,10 @@ class Command:
         self.lastrun = 0
 
     def __call__(self, resources, args, properties, parent):
-        flag = True
+        output = ""
         if time.time() > self.lastrun + self.timeout:
-            self.function(resources, args, properties, parent)
+            output = self.function(resources, args, properties, parent)
         else:
-            flag = False
+            output = False
         self.lastrun = time.time()
-        return flag
+        return output

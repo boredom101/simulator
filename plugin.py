@@ -11,9 +11,9 @@ class Plugin:
         if args[0] in self.commands:
             temp = args[0]
             args.pop(0)
-            result = self.commands[temp](self.resources, args, self.properties, self.parent)
-            if result == False:
-                print("Command " + self.commands[temp].name + " needs to recharge.")
-            return True
+            output = self.commands[temp](self.resources, args, self.properties, self.parent)
+            if output == False:
+                output = "Command " + self.commands[temp].name + " needs to recharge."
+            return output
         else:
             return False

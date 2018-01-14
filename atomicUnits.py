@@ -3,9 +3,9 @@ def view (resources, args, properties, parent):
         total = 0
         for resource in parent.resources.values():
             total += properties["elementary charge"].values[resource.name] * resource.amount
-        print(str(total) + "e")
+        return str(total) + "e"
     elif args[0] in parent.resources:
             resource = parent.resources[args[0]]
-            print(str((resource.amount * properties["elementary charge"].values[resource.name])) + "e")
+            return str((resource.amount * properties["elementary charge"].values[resource.name])) + "e"
     else:
-        print("nonexistent subatomic particle")
+        return "nonexistent subatomic particle"
