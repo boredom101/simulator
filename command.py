@@ -13,10 +13,10 @@ class Command:
         self.timeout = timeout
         self.lastrun = 0
 
-    def __call__(self, resources, args, properties, parent):
+    def __call__(self, plugin, arg, parent):
         output = ""
         if time.time() > self.lastrun + self.timeout:
-            output = self.function(resources, args, properties, parent)
+            output = self.function(plugin, arg, parent)
         else:
             output = False
         self.lastrun = time.time()

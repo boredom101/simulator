@@ -8,5 +8,5 @@ class Resource:
         self.name = name
         self.amount = amount
 
-    def modify(self, amount):
+    def modify(self, amount: object) -> object:
         self.amount += amount
